@@ -34,3 +34,5 @@ Requisitos adicionales:
 . Asegúrate de que tu script sea idempotente, es decir, que pueda ejecutarse varias veces sin cambiar el estado del sistema si ya ha sido aplicado correctamente.
 
 Utiliza buenas prácticas de manejo de errores, como comprobaciones de estado de los comandos.
+
+hola
