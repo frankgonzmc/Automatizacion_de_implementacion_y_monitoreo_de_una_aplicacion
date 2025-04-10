@@ -9,8 +9,11 @@ def main():
     if path != None:
         print("La ruta es correcta")
         #Llamar a la funcion para clonar el repositorio
-        if clone_repositorio(path):
+        respuesta = clone_repositorio(path)
+        if respuesta != None:
             print("Repositorio clonado correctamente")
+            #Ir al directorio de proyecto clonado
+            os.chdir(respuesta)
         else:
             print("Error al clonar el repositorio")
     else:
