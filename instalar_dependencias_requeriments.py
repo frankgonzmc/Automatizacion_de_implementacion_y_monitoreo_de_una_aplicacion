@@ -5,8 +5,8 @@ def instalar_dependencias():
     comando = ['pip', 'install', '-r', 'requirements.txt']
     try:
         resultado = subprocess.run(comando, capture_output=True, text=True, check=True)
-        print("Dependencias instaladas con éxito."),
         print(resultado.stdout)
+        print("Dependencias instaladas con éxito."),
     except subprocess.CalledProcessError as e:
         # Este error ocurre si el comando pip falla (por ejemplo, si requirements.txt no existe o hay un problema de red)
         print(f"Error al ejecutar el comando: {e}")

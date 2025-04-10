@@ -5,6 +5,7 @@ from directorioProyecto import get_project_path
 from url_github import clone_repositorio
 from crear_entorno_virtual import ejecutar_comando_entorno_virtual
 from activar_entorno import activar_entorno_virtual
+from instalar_dependencias_requeriments import instalar_dependencias
 
 def main():
     path = get_project_path()
@@ -25,6 +26,12 @@ def main():
             print("Activando entorno virtual...")
             time.sleep(3)
             activar_entorno_virtual()
+            #Instalar dependencias
+            print("Instalando dependencias...")
+            time.sleep(3)
+            instalar_dependencias()
+            
+
         else:
             print("Error al clonar el repositorio")
     else:
