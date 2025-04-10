@@ -1,7 +1,9 @@
 import os
+import time
 #Archivos py
 from directorioProyecto import get_project_path
 from url_github import clone_repositorio
+from crear_entorno_virtual import ejecutar_comando_entorno_virtual
 
 
 def main():
@@ -14,6 +16,11 @@ def main():
             print("Repositorio clonado correctamente")
             #Ir al directorio de proyecto clonado
             os.chdir(respuesta)
+            print("Esperando 3 segundos...")
+            time.sleep(3)  # Pausa de 3 segundos
+            print("Creando entorno virtual...")
+            #Crear entorno virtual
+            ejecutar_comando_entorno_virtual()
         else:
             print("Error al clonar el repositorio")
     else:
