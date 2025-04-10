@@ -4,7 +4,7 @@ import time
 from directorioProyecto import get_project_path
 from url_github import clone_repositorio
 from crear_entorno_virtual import ejecutar_comando_entorno_virtual
-
+from activar_entorno import activar_entorno_virtual
 
 def main():
     path = get_project_path()
@@ -21,6 +21,10 @@ def main():
             print("Creando entorno virtual...")
             #Crear entorno virtual
             ejecutar_comando_entorno_virtual()
+            #Activar entorno virtual
+            print("Activando entorno virtual...")
+            time.sleep(3)
+            activar_entorno_virtual()
         else:
             print("Error al clonar el repositorio")
     else:
