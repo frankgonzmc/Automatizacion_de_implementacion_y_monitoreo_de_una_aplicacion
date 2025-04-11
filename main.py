@@ -4,8 +4,7 @@ import time
 from directorioProyecto import get_project_path
 from url_github import clone_repositorio
 from crear_entorno_virtual import ejecutar_comando_entorno_virtual
-from activar_entorno import activar_entorno_virtual
-from instalar_dependencias_requeriments import instalar_dependencias
+from activar_entorno import activar_entorno_virtual_instalar_dependencias
 
 def main():
     path = get_project_path()
@@ -21,19 +20,19 @@ def main():
             time.sleep(3)  # Pausa de 3 segundos
             print("Creando entorno virtual...")
             #Crear entorno virtual
-            ejecutar_comando_entorno_virtual()
-            #Activar entorno virtual
-            print("Activando entorno virtual...")
-            time.sleep(3)
-            activar_entorno_virtual()
-            #Instalar dependencias
-            print("Instalando dependencias...")
-            time.sleep(3)
-            instalar_dependencias()
-            
-            #Probando Linux
-
-
+            respuesta_entorno_virtual = ejecutar_comando_entorno_virtual()
+            if (respuesta_entorno_virtual == True):
+                #Activar entorno virtual
+                print("Activando entorno virtual...")
+                time.sleep(3)
+                respuesta_activar_entorno_y_instalar_dependencias = activar_entorno_virtual_instalar_dependencias()
+                if (respuesta_activar_entorno_y_instalar_dependencias == True):
+                    #Instalar dependencias
+                    print("Entorno virtual y dependencias instaladas con exito...")
+                else:
+                    print("Error al activar entorno virtual y/o instalar dependencias.")
+            else:
+                print("Error al crear entorno virtual.")    
 
         else:
             print("Error al clonar el repositorio")
