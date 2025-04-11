@@ -31,6 +31,9 @@ def main():
             time.sleep(3)
             instalar_dependencias()
             
+            #Probando Linux
+
+
 
         else:
             print("Error al clonar el repositorio")
