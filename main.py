@@ -5,6 +5,7 @@ from directorioProyecto import get_project_path
 from url_github import clone_repositorio
 from crear_entorno_virtual import ejecutar_comando_entorno_virtual
 from activar_entorno import activar_entorno_virtual_instalar_dependencias
+from instalar_gunicorn import install_gunicorn
 
 def main():
     path = get_project_path()
@@ -29,6 +30,15 @@ def main():
                 if (respuesta_activar_entorno_y_instalar_dependencias == True):
                     #Instalar dependencias
                     print("Entorno virtual y dependencias instaladas con exito...")
+                    print("Preparando instalacion de gunicorn.")
+                    time.sleep(3)
+                    print("Instalado gunicorn...")
+                    time.sleep(3)
+                    respuesta_install_gunicorn = install_gunicorn()
+                    if (respuesta_install_gunicorn == True):
+                        print("Instalacion de gunicorn exitosa.")
+                    else:
+                        print("Error al instalar gunicorn.")
                 else:
                     print("Error al activar entorno virtual y/o instalar dependencias.")
             else:
